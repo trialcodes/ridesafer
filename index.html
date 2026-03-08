@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="icon" href="download1.png" type="image/png">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RideSafer | Specifications • Repairs • Accessories • Reviews </title>
+
+</head>
+
+<style>
+
+html{scroll-behavior:smooth;}
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#0b0b0b;
+color:#ffffff;
+}
+
+/* HEADER */
+
+header{
+position:fixed;
+top:0;
+width:100%;
+background:#111;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 20px;
+z-index:1000;
+border-bottom:2px solid #DAA520; /* goldenrod */
+box-sizing:border-box;
+}
+
+header h1{
+color:#DAA520;
+margin:0;
+font-size:24px;
+letter-spacing:2px;
+}
+
+/* NAV */
+
+nav{
+display:flex;
+align-items:center;
+}
+
+
+nav a{
+color:#ffffff;
+text-decoration:none;
+margin-left:20px;
+font-weight:bold;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#DAA520;
+}
+
+.menu-toggle{
+display:none;
+font-size:28px;
+cursor:pointer;
+color:white;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:100px 20px;
+
+background:
+linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.9)),
+url('header_bg.png');
+
+background-size:cover;
+background-position:center;
+}
+
+.hero h2{
+font-size:52px;
+color:#DAA520;
+margin-bottom:15px;
+}
+
+
+.hero p{
+font-size:20px;
+max-width:700px;
+}
+
+
+.cta{
+margin-top:30px;
+background:#DAA520;
+padding:14px 30px;
+border-radius:6px;
+text-decoration:none;
+color:#111;
+font-weight:bold;
+transition:.3s;
+}
+
+.cta:hover{
+background:#c6951c;
+}
+/* SECTION */
+
+.section{
+padding:80px 40px;
+max-width:1100px;
+margin:auto;
+text-align:center;
+}
+
+
+.section h3{
+font-size:36px;
+color:#DAA520;
+margin-bottom:40px;
+}
+/* GRID */
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.service-box{
+background:#2a2a2a; /* gray */
+padding:20px;
+border-radius:10px;
+transition:.3s;
+box-shadow:0 0 10px rgba(218,165,32,0.2);
+}
+
+.service-box:hover{
+transform:translateY(-8px);
+box-shadow:0 0 20px #DAA520;
+}
+
+.service-box img{
+width:180px;
+height:200px;
+margin-bottom:10px;
+}
+
+.service-box h4{
+color:#DAA520;
+}
+
+/* TESTIMONIAL */
+
+.testimonial{
+background:#2a2a2a;
+padding:20px;
+margin:10px auto;
+border-radius:8px;
+max-width:700px;
+}
+
+
+/* CONTACT */
+
+.contact-form{
+max-width:600px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+padding:12px;
+border:none;
+border-radius:6px;
+background:#2a2a2a;
+color:white;
+font-size:16px;
+}
+
+
+.contact-form textarea{
+height:120px;
+resize:none;
+}
+
+.contact-form button{
+background:#DAA520;
+color:#111;
+border:none;
+padding:12px;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.contact-form button:hover{
+background:#c6951c;
+}
+/* SCROLL ANIMATION */
+
+.animate {
+  opacity: 0;
+  transition: opacity 1.5s ease; /* fade effect */
+}
+
+.animate.show {
+  opacity: 1;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.menu-toggle{
+display:block;
+position:absolute;
+right:20px;
+top:15px;
+}
+
+nav{
+position:absolute;
+top:60px;
+left:0;
+width:100%;
+background:#111;
+flex-direction:column;
+display:none;
+}
+
+nav.show{
+display:flex;
+}
+
+nav a{
+padding:15px;
+border-bottom:1px solid #222;
+text-align:center;
+}
+
+.hero h2{
+font-size:32px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.section{
+padding:60px 20px;
+}
+
+}
+
+</style>
+
+<body>
+
+<header>
+
+<h1>RideSafer</h1>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<nav id="navMenu">
+<a href="#home">Home</a>
+<a href="#specification">Specification</a>
+<a href="#repairs">Repairs</a>
+<a href="#accessories">Accessories</a>
+<a href="#review">Review</a>
+<a href="#contact">Contact</a>
+</nav>
+
+</header>
+
+
+<!-- HOME -->
+
+<section id="home" class="hero animate">
+
+<h2>Motorcycle Information & Guide</h2>
+
+<p>
+Specifications • Repairs • Accessories • Reviews
+</p>
+
+<a href="#specification" class="cta">Explore</a>
+
+</section>
+
+
+<!-- SPECIFICATION -->
+
+<section id="specification" class="section animate">
+
+<h3>Motorcycle Specifications</h3>
+
+<div class="services">
+
+<div class="service-box">
+<img src="euro_DH_150.png">
+<h4>EURO DH 150cc</h4>
+<p>Displacement : 150cc  •  Category : Daily Business  •  Power : 12.73hp @ 9500rpm  •  Torque : 10Nm @ 7500rpm   •  Transmission : Manual 5 speed  •  Engine : 1 Cylinder 4-stroke  •  Fuel Tank Capacity : 9.2L  •  Fuel Consumption : 40km/L - 45km/L  •  Fuel System : Carburetor  •  Starting System : Electric & Kick Starter
+</p>
+</div>
+
+<div class="service-box">
+<img src="rusi_MACHO_150.png">
+<h4>RUSI TC MACHO 150cc</h4>
+<p>Displacement : 144.6cc  •  Category : Daily Business  •  Power : 12.73hp @ 9500rpm  •  Torque : 10Nm @ 4500rpm  •  Transmission : Manual 5 speed  •  Engine : 1 Cylinder 4-stroke  •  Fuel Tank Capacity : 12L  •  Fuel Consumption : 40km/L - 48km/L  •  Fuel System : Carburetor  •  Starting System : Electric & Kick Starter
+</p>
+</div>
+
+<div class="service-box">
+<img src="skygo_KING_150.png">
+<h4>SKYGO KING 150cc</h4>
+<p>Displacement : 144.6cc  •  Category : Daily Business  •  Power : 12.73hp @ 9500rpm  •  Torque : 10Nm @ 7500rpm  •  Transmission : Manual 5 speed  •  Engine : 1 Cylinder 4-stroke  •  Fuel Tank Capacity : 12L  •  Fuel Consumption : 40km/L - 41km/L  •  Fuel System : Carburetor  •  Starting System : Electric & Kick Starter
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- REPAIRS -->
+
+<section id="repairs" class="section animate">
+
+<h3>Motorcycle Repairs</h3>
+
+<div class="services">
+
+<div class="service-box">
+<img src="change_oil.png">
+<h4>Oil Change</h4>
+<p>Regular oil change improves engine life.</p>
+</div>
+
+<div class="service-box">
+<img src="breaks.png">
+<h4>Brake Repair</h4>
+<p>Check brake pads and fluid for safety.</p>
+</div>
+
+<div class="service-box">
+<img src="wiring.png">
+<h4>Wiring Repair</h4>
+<p>Check or change wirings for motorcycles.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ACCESSORIES -->
+
+<section id="accessories" class="section animate">
+
+<h3>Motorcycle Accessories</h3>
+
+<div class="services">
+
+<div class="service-box">
+<img src="helm_acce.png">
+<h4>Helmet</h4>
+<p>High quality motorcycle safety helmets.</p>
+</div>
+
+<div class="service-box">
+<img src="led_lights.png">
+<h4>LED Lights</h4>
+<p>Bright headlights for better visibility.</p>
+</div>
+
+<div class="service-box">
+<img src="topbox.png">
+<h4>Top Box</h4>
+<p>Extra storage for motorcycle travel.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- REVIEW -->
+
+<section id="review" class="section animate">
+
+<h3>Customer Reviews</h3>
+
+<div class="testimonial">
+"Great motorcycle information website."
+</div>
+
+<div class="testimonial">
+"Very helpful repair tips."
+</div>
+
+<div class="testimonial">
+"Accessories recommendations are useful."
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="section animate">
+
+<h3>Contact Us</h3>
+
+<form onsubmit="sendMail(); return false;" class="contact-form">
+
+<input id="name" type="text" placeholder="Your Name" required>
+
+<input id="email" type="email" placeholder="Your Email" required>
+
+<textarea id="message" placeholder="Your Message" required></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</section>
+
+
+<footer style="text-align:center;padding:30px;background:#111">
+
+<p> © 2026 RideSafer | All Rights Reserved </p>
+<p> CONTACTS </p>
+<p> 09975373560 | 1996dragrat@gmail | <a href="http://facebook.com/drag.rat.3" style="text-decoration:none;">FACEBOOK</a> </p>
+<p> Specifications • Repairs • Accessories • Reviews</p>
+
+</footer>
+
+
+<script>
+
+function fadeOnScroll() {
+  const sections = document.querySelectorAll(".animate");
+  sections.forEach(section => {
+    const rect = section.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 100){ // section visible
+      section.classList.add("show");
+    }
+  });
+}
+
+window.addEventListener("scroll", fadeOnScroll);
+window.addEventListener("load", fadeOnScroll);
+
+document.querySelectorAll("nav a").forEach(link => {
+  link.addEventListener("click", function(e){
+    e.preventDefault(); // prevent default jump
+    const targetID = this.getAttribute("href").substring(1);
+    const target = document.getElementById(targetID);
+
+    // Smooth scroll to section
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // Add fade animation after a tiny delay
+    setTimeout(() => {
+      target.classList.add("show");
+    }, 100); // 100ms delay is enough
+  });
+});
+
+function toggleMenu(){
+var menu = document.getElementById("navMenu");
+menu.classList.toggle("show");
+}
+
+/* SCROLL ANIMATION */
+
+function revealSections(){
+
+let elements = document.querySelectorAll(".animate");
+
+elements.forEach(function(el){
+
+let windowHeight = window.innerHeight;
+let elementTop = el.getBoundingClientRect().top;
+
+if(elementTop < windowHeight - 100){
+el.classList.add("show");
+}
+
+});
+
+}
+
+window.addEventListener("scroll", revealSections);
+window.addEventListener("load", revealSections);
+
+/* EMAIL */
+
+function sendMail(){
+
+let name = document.getElementById("name").value;
+let email = document.getElementById("email").value;
+let message = document.getElementById("message").value;
+
+let subject = "Website Message from " + name;
+
+let body =
+"Name: " + name + "%0D%0A" +
+"Email: " + email + "%0D%0A%0D%0A" +
+"Message:%0D%0A" + message;
+
+window.location.href =
+"mailto:1996dragrat@gmail.com?subject="+subject+"&body="+body;
+
+}
+
+</script>
+
+</body>
+</html>
