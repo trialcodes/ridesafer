@@ -27,15 +27,28 @@ body{
      background:#0b0b0b;
      color:#ffffff;
 }
-     
+          header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 header .logo img.logo-img {
-    width: 40px;
-    height: 40px;
+  width: 80px;        /* logo size */
+  height: 80px;
+     border-radius:50px;
+  object-fit: contain;
+}
+
+/* Adjust h1 next to logo */
+header .logo h1 {
+  color: red;
+  margin: 0;
+  font-size: 24px;
+  letter-spacing: 2px;
 }
      
-header .logo h1 {
-font-size: 20px;
-}
+
 /* HEADER */
 
 header{
@@ -245,6 +258,14 @@ background:#c6951c;
 
 @media(max-width:768px){
 
+     header .logo img.logo-img {
+    width: 40px;
+    height: 40px;
+}
+     
+header .logo h1 {
+font-size: 20px;
+}
 .menu-toggle{
 display:block;
 position:absolute;
@@ -571,6 +592,7 @@ window.location.href =
 </body>
 
 </html>
+
 
 
 
