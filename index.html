@@ -542,15 +542,15 @@ function revealSections() {
 window.addEventListener("scroll", revealSections);
 window.addEventListener("load", revealSections);
 
-//document.querySelectorAll("nav a").forEach(link => {
-//  link.addEventListener("click", function(e){
-//    e.preventDefault();
-  //  const targetID = this.getAttribute("href").substring(1);
-//    const target = document.getElementById(targetID);
-//
- //   target.scrollIntoView({ behavior: 'smooth', block: 'start' });
- // });
-//});
+document.querySelectorAll("nav a").forEach(link => {  
+     link.addEventListener("click", function(e){
+    e.preventDefault();
+    const targetID = this.getAttribute("href").substring(1);
+ const target = document.getElementById(targetID);
+
+   target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
      
 
 function toggleMenu(){
@@ -583,6 +583,7 @@ window.location.href =
 </body>
 
 </html>
+
 
 
 
