@@ -110,8 +110,11 @@ color:white;
 .hero{
 
 width: 100%;              /* full width */
-  height: 100vh;            /* full viewport height */
+            /* full viewport height */
+height: calc(100vh - 70px); /* subtract header height */
+  padding-top: 70px;
   display: flex;
+     
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -583,6 +586,7 @@ window.location.href =
 </body>
 
 </html>
+
 
 
 
