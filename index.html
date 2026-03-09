@@ -153,43 +153,35 @@ background:#c6951c;
 
      
 /* SECTION */
+.section {
+  padding: 80px 40px;
+  min-height: 100vh;
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 
-.section{
-  padding:80px 40px;
-  min-height:100vh;
-  max-width:1100px;
-  margin:auto;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  text-align:center;
-     opacity:0;
-  transform:translateY(50px);
-  transition: opacity 0.3s, transform 0.3s;
+  opacity: 0; /* start hidden */
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.section h3{
+.slide-up {
+  animation: slideUp 0.8s ease forwards;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+     .section h3{
 font-size:36px;
 color:#DAA520;
 margin-bottom:40px;
 }
      
-
-/* animation class */
-.slide-up{
-  animation: slideUp 0.8s ease forwards;
-}
-
-@keyframes slideUp{
-  from{
-    opacity:0;
-    transform:translateY(50px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
 /* GRID */
 
 .services{
@@ -365,7 +357,7 @@ padding:60px 20px;
 
 <!-- HOME -->
 
-<section id="home" class="hero">
+<section id="home" class="section animate hero">
 
 <h2>Motorcycle Information & Guidance</h2>
 <p>Specifications • Repairs • Accessories • Reviews</p>
@@ -376,7 +368,7 @@ padding:60px 20px;
 
 <!-- SPECIFICATION -->
 
-<section id="specification" class="section">
+<section id="specification" class="section animate">
 
 <h3>Motorcycle Specifications</h3>
 
@@ -410,7 +402,7 @@ padding:60px 20px;
 
 <!-- REPAIRS -->
 
-<section id="repairs" class="section">
+<section id="repairs" class="section animate">
 
 <h3>Motorcycle Repairs</h3>
 
@@ -441,7 +433,7 @@ padding:60px 20px;
 
 <!-- ACCESSORIES -->
 
-<section id="accessories" class="section">
+<section id="accessories" class="section animate">
 
 <h3>Motorcycle Accessories</h3>
 
@@ -472,7 +464,7 @@ padding:60px 20px;
 
 <!-- REVIEW -->
 
-<section id="review" class="section">
+<section id="review" class="section animate">
 
 <h3>Customer Reviews</h3>
 
@@ -507,80 +499,35 @@ padding:60px 20px;
 </footer>
 
 <script>
-function revealSections(){
-
-const sections = document.querySelectorAll(".section");
-
-sections.forEach(section => {
-
-const rect = section.getBoundingClientRect();
-
-if(rect.top < window.innerHeight - 100){
-section.classList.add("slide-up");
-}
-
-});
-
-}
-
-window.addEventListener("scroll", revealSections);
-window.addEventListener("load", revealSections);
-     
-function fadeOnScroll() {
+function revealSections() {
   const sections = document.querySelectorAll(".animate");
+
   sections.forEach(section => {
     const rect = section.getBoundingClientRect();
-    if(rect.top < window.innerHeight - 100){ // section visible
-      section.classList.add("show");
+    if(rect.top < window.innerHeight - 100 && !section.classList.contains("slide-up")) {
+      section.classList.add("slide-up");
     }
   });
 }
 
-window.addEventListener("scroll", fadeOnScroll);
-window.addEventListener("load", fadeOnScroll);
+window.addEventListener("scroll", revealSections);
+window.addEventListener("load", revealSections);
 
 document.querySelectorAll("nav a").forEach(link => {
   link.addEventListener("click", function(e){
-    e.preventDefault(); // prevent default jump
+    e.preventDefault();
     const targetID = this.getAttribute("href").substring(1);
     const target = document.getElementById(targetID);
 
-    // Smooth scroll to section
     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-    // Add fade animation after a tiny delay
-    setTimeout(() => {
-      target.classList.add("show");
-    }, 100); // 100ms delay is enough
   });
 });
+     
 
 function toggleMenu(){
 var menu = document.getElementById("navMenu");
 menu.classList.toggle("show");
 }
-
-/* SCROLL ANIMATION */
-
-function revealSections(){
-
-let elements = document.querySelectorAll(".animate");
-
-elements.forEach(function(el){
-
-let windowHeight = window.innerHeight;
-let elementTop = el.getBoundingClientRect().top;
-
-if(elementTop < windowHeight - 100){
-el.classList.add("show");
-}
-
-});
-
-}
-
-window.addEventListener("scroll", revealSections);
-window.addEventListener("load", revealSections);
 
 /* EMAIL */
 
@@ -607,6 +554,7 @@ window.location.href =
 </body>
 
 </html>
+
 
 
 
