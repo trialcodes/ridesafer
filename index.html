@@ -527,14 +527,13 @@ document.querySelectorAll("nav a").forEach(link => {
 
     e.preventDefault();
 
-    const targetID = this.getAttribute("href");
-    const target = document.querySelector(targetID);
+    const target = document.querySelector(this.getAttribute("href"));
 
-    target.scrollIntoView({ behavior: "smooth" });
+    target.scrollIntoView({behavior:"smooth"});
 
-    target.classList.remove("slide-in");
+    target.classList.remove("slide-up");
     void target.offsetWidth;
-    target.classList.add("slide-in");
+    target.classList.add("slide-up");
 
   });
 
@@ -621,6 +620,7 @@ window.location.href =
 </body>
 
 </html>
+
 
 
 
