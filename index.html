@@ -147,6 +147,8 @@ transition:.3s;
 .cta:hover{
 background:#c6951c;
 }
+
+     
 /* SECTION */
 
 .section{
@@ -164,6 +166,21 @@ background:#c6951c;
 font-size:36px;
 color:#DAA520;
 margin-bottom:40px;
+}
+
+     .slide-in{
+  animation: slideFromRight 0.8s ease forwards;
+}
+
+@keyframes slideFromRight{
+  from{
+    opacity:0;
+    transform:translateX(200px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
 }
 /* GRID */
 
@@ -339,7 +356,7 @@ padding:60px 20px;
 
 <!-- HOME -->
 
-<section id="home" class="hero animate">
+<section id="home" class="section">
 
 <h2>Motorcycle Information & Guide</h2>
 
@@ -354,7 +371,7 @@ Specifications • Repairs • Accessories • Reviews
 
 <!-- SPECIFICATION -->
 
-<section id="specification" class="section animate">
+<section id="specification" class="section">
 
 <h3>Motorcycle Specifications</h3>
 
@@ -388,7 +405,7 @@ Specifications • Repairs • Accessories • Reviews
 
 <!-- REPAIRS -->
 
-<section id="repairs" class="section animate">
+<section id="repairs" class="section">
 
 <h3>Motorcycle Repairs</h3>
 
@@ -419,7 +436,7 @@ Specifications • Repairs • Accessories • Reviews
 
 <!-- ACCESSORIES -->
 
-<section id="accessories" class="section animate">
+<section id="accessories" class="section">
 
 <h3>Motorcycle Accessories</h3>
 
@@ -450,7 +467,7 @@ Specifications • Repairs • Accessories • Reviews
 
 <!-- REVIEW -->
 
-<section id="review" class="section animate">
+<section id="review" class="section">
 
 <h3>Customer Reviews</h3>
 
@@ -488,7 +505,22 @@ Specifications • Repairs • Accessories • Reviews
 
 </footer>
 
+document.querySelectorAll("nav a").forEach(link => {
 
+  link.addEventListener("click", function(){
+
+    const target = document.querySelector(this.getAttribute("href"));
+
+    target.classList.remove("slide-in");
+
+    void target.offsetWidth; // restart animation
+
+    target.classList.add("slide-in");
+
+  });
+
+});
+     
 <script>
 
 function fadeOnScroll() {
@@ -572,6 +604,7 @@ window.location.href =
 </body>
 
 </html>
+
 
 
 
