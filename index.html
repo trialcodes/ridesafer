@@ -61,6 +61,7 @@ position:fixed;
 top:0;
 width:100%;
 background:#111;
+opacity:0.90;
 display:flex;
 justify-content:space-between;
 align-items:center;
@@ -119,7 +120,6 @@ padding:100px 20px;
 background:
 linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.9)),
 url('header_bg.png');
-
 background-size:cover;
 background-position:center;
 }
@@ -176,14 +176,14 @@ margin-bottom:40px;
   animation: slideFromRight 0.8s ease forwards;
 }
 
-@keyframes slideFromRight{
+@keyframes slideUp{
   from{
     opacity:0;
-    transform:translateX(200px);
+    transform:translateY(150px); /* start below */
   }
   to{
     opacity:1;
-    transform:translateX(0);
+    transform:translateY(0); /* move to normal position */
   }
 }
 /* GRID */
@@ -283,7 +283,8 @@ background:#c6951c;
   background-size:cover;
   background-position:center;
   background-repeat:no-repeat;
-     width:100vh;
+  width:100%;
+opacity:.90;
 }
 
 /* MOBILE */
@@ -368,9 +369,9 @@ padding:60px 20px;
 
 <!-- HOME -->
 
-<section id="home" class="section">
+<section id="home" class="hero">
 
-<h2>Motorcycle Information & Guide</h2>
+<h2>Motorcycle Information & Guidance</h2>
 
 <p>
 Specifications • Repairs • Accessories • Reviews
@@ -619,6 +620,7 @@ window.location.href =
 </body>
 
 </html>
+
 
 
 
