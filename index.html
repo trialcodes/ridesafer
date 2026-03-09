@@ -501,24 +501,24 @@ padding:60px 20px;
 </footer>
 
 <script>
-     
-document.querySelectorAll("nav a").forEach(link => {
+function revealSections(){
 
-  link.addEventListener("click", function(e){
+const sections = document.querySelectorAll(".section");
 
-    e.preventDefault();
+sections.forEach(section => {
 
-    const target = document.querySelector(this.getAttribute("href"));
+const rect = section.getBoundingClientRect();
 
-    target.scrollIntoView({behavior:"smooth"});
-
-    target.classList.remove("slide-up");
-    void target.offsetWidth;
-    target.classList.add("slide-up");
-
-  });
+if(rect.top < window.innerHeight - 100){
+section.classList.add("slide-up");
+}
 
 });
+
+}
+
+window.addEventListener("scroll", revealSections);
+window.addEventListener("load", revealSections);
      
 function fadeOnScroll() {
   const sections = document.querySelectorAll(".animate");
@@ -601,6 +601,7 @@ window.location.href =
 </body>
 
 </html>
+
 
 
 
