@@ -529,18 +529,18 @@ document.querySelectorAll("nav a").forEach(link => {
 });
 
 // Also animate on scroll (optional)
-//function revealSections() {
- // const sections = document.querySelectorAll(".animate");
-//  sections.forEach(section => {
-   // const rect = section.getBoundingClientRect();
-//    if(rect.top < window.innerHeight - 100) {
-     // animateSection(section);
-  //  }
- // });
-//}
+function revealSections() {
+  const sections = document.querySelectorAll(".animate");
+  sections.forEach(section => {
+    const rect = section.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 100) {
+      animateSection(section);
+    }
+  });
+}
 
-//window.addEventListener("scroll", revealSections);
-//window.addEventListener("load", revealSections);
+window.addEventListener("scroll", revealSections);
+window.addEventListener("load", revealSections);
 
 //document.querySelectorAll("nav a").forEach(link => {
 //  link.addEventListener("click", function(e){
@@ -583,6 +583,7 @@ window.location.href =
 </body>
 
 </html>
+
 
 
 
