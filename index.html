@@ -18,8 +18,12 @@
 </head>
      
 <style>
-html{scroll-behavior:smooth;
+html, body{
+  margin:0;
+  padding:0;
+  scroll-behavior:smooth;
 }
+
 
 body{
      margin:0;
@@ -505,24 +509,27 @@ Specifications • Repairs • Accessories • Reviews
 
 </footer>
 
+<script>
+     
 document.querySelectorAll("nav a").forEach(link => {
 
-  link.addEventListener("click", function(){
+  link.addEventListener("click", function(e){
 
-    const target = document.querySelector(this.getAttribute("href"));
+    e.preventDefault();
+
+    const targetID = this.getAttribute("href");
+    const target = document.querySelector(targetID);
+
+    target.scrollIntoView({ behavior: "smooth" });
 
     target.classList.remove("slide-in");
-
-    void target.offsetWidth; // restart animation
-
+    void target.offsetWidth;
     target.classList.add("slide-in");
 
   });
 
 });
      
-<script>
-
 function fadeOnScroll() {
   const sections = document.querySelectorAll(".animate");
   sections.forEach(section => {
@@ -604,6 +611,7 @@ window.location.href =
 </body>
 
 </html>
+
 
 
 
